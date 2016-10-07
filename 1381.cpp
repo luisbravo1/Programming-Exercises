@@ -1,25 +1,31 @@
 #include <iostream>
 #include <cstdio>
 #include <math.h>
+
 using namespace std;
 
 int main() {
     
-    int iDistance, iVelocity1, iVelocity2, iFly, iCases;
+    int iCases;
+    double dDistance, dVelocity1, dVelocity2, dFly;
     double dDistTraveled, dTime;
+    
     
     do {
         cin >> iCases;
     } while (iCases > 100);
+
+
     
     for (int count = 0; count < iCases; count++) {
-        cin >> iDistance >> iVelocity1 >> iVelocity2 >> iFly;
+        cin >> dDistance >> dVelocity1 >> dVelocity2 >> dFly;
     
-        dTime = (double)iDistance / (iVelocity1 + iVelocity2);
-        dDistTraveled += dTime * iFly;
+        dTime = dDistance / (dVelocity1 + dVelocity2);
+        dDistTraveled = dTime * dFly;
+        
+        printf ("%.2f\n", dDistTraveled);
     }
     
     
-    printf ("%.2f\n", ceil(dDistTraveled));
-    
+    return 0;
 }
